@@ -20,7 +20,7 @@ $ npm install -g genrc
 $ genrc COMMAND
 running command...
 $ genrc (-v|--version|version)
-genrc/0.0.0 darwin-x64 node-v12.18.4
+genrc/0.1.0 darwin-x64 node-v12.18.4
 $ genrc --help [COMMAND]
 USAGE
   $ genrc COMMAND
@@ -29,8 +29,23 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`genrc g`](#genrc-g)
 * [`genrc hello [FILE]`](#genrc-hello-file)
 * [`genrc help [COMMAND]`](#genrc-help-command)
+
+## `genrc g`
+
+Generate React components
+
+```
+USAGE
+  $ genrc g
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/g.ts](https://github.com/Hennessy811/genrc/blob/v0.1.0/src/commands/g.ts)_
 
 ## `genrc hello [FILE]`
 
@@ -50,7 +65,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/Hennessy811/genrc/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/Hennessy811/genrc/blob/v0.1.0/src/commands/hello.ts)_
 
 ## `genrc help [COMMAND]`
 
