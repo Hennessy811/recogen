@@ -3,17 +3,21 @@ import { StylesType } from '../commands/g';
 interface ComponentProps {
 	name: string;
 	style?: StylesType;
+	useModules?: boolean;
 }
 
-export const component = ({ name, style }: ComponentProps): string => {
-	const stylesStr =
-		style === 'no styles'
-			? ''
-			: `import styles from './${name}.module${style}';`;
+export const component = ({
+	name,
+	style,
+	useModules
+}: ComponentProps): string => {
+	let styles = '';
+	if (useModules) styles = `import styles from './${name}.module${style}';`;
+	else styles = `import './styles${style}';`;
 
 	return `
 import React from 'react';
-${stylesStr}
+${styles}
 
 const ${name} = () => {
   return (

@@ -9,18 +9,20 @@ export type StylesType = '.scss' | '.sass' | '.less' | '.css' | 'no styles';
 const writeTemplates = ({
 	name,
 	style,
-	useTS
+	useTS,
+	useModules
 }: {
 	name: string;
 	style: StylesType;
 	useTS: boolean;
+	useModules: boolean;
 }) => {
 	const extension = useTS ? 'ts' : 'js';
 	fs.mkdirSync(`./${name}`);
 
 	fs.writeFileSync(
 		`./${name}/${name}.${extension}x`,
-		defaultTemplates.component({ name, withStyles: style !== 'no styles' })
+		defaultTemplates.component({ name, style, useModules })
 	);
 
 	fs.writeFileSync(
@@ -29,10 +31,14 @@ const writeTemplates = ({
 	);
 
 	if (style !== 'no styles') {
-		fs.writeFileSync(
-			`./${name}/${name}.module${style}`,
-			defaultTemplates.styles()
-		);
+		if (useModules) {
+			fs.writeFileSync(
+				`./${name}/${name}.module${style}`,
+				defaultTemplates.styles()
+			);
+		} else {
+			fs.writeFileSync(`./${name}/styles${style}`, defaultTemplates.styles());
+		}
 	}
 };
 
@@ -65,7 +71,7 @@ export default class Generate extends Command {
 	// static args = [{ name: 'file' }];
 
 	async run() {
-		const { args, flags } = this.parse(Generate);
+		// const { args, flags } = this.parse(Generate);
 
 		let name: string = await cli.prompt('Enter component name?');
 
@@ -89,6 +95,12 @@ export default class Generate extends Command {
 				]
 			},
 			{
+				name: 'useModules',
+				message: 'Use CSS Modules?',
+				type: 'confirm',
+				default: true
+			},
+			{
 				name: 'useTS',
 				message: 'Use TypeScript?',
 				type: 'confirm',
@@ -99,12 +111,15 @@ export default class Generate extends Command {
 		cli.action.start('Generating...');
 		writeTemplates({
 			name,
-			style: responses['styles'],
-			useTS: responses['useTS']
+			style: responses.styles,
+			useTS: responses.useTS,
+			useModules: responses.useModules
 		});
 		cli.action.stop();
 		this.log(`
-    '${name}' component generated. Styles - '${responses['styles']}' | Use TS: ${responses['useTS']}
+    '${name}' component generated. Styles - '${responses.styles} | Use modules - ${responses.useModules} | Use TS: ${responses.useTS}
     `);
+
+		return 0;
 	}
 }
