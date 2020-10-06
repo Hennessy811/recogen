@@ -22,7 +22,7 @@ $ npm install -g recogen
 $ recogen COMMAND
 running command...
 $ recogen (-v|--version|version)
-recogen/0.1.1 darwin-x64 node-v12.18.4
+recogen/0.1.2 darwin-x64 node-v12.18.4
 $ recogen --help [COMMAND]
 USAGE
   $ recogen COMMAND
@@ -59,7 +59,7 @@ EXAMPLE
        Generating...... done
 ```
 
-_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.1.1/src/commands/g.ts)_
+_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.1.2/src/commands/g.ts)_
 
 ## `recogen help [COMMAND]`
 

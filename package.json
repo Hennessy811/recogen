@@ -1,7 +1,7 @@
 {
 	"name": "recogen",
 	"description": "Generate React components by templates nice and easy",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"author": "Malakhov Dmitriy",
 	"bin": {
 		"recogen": "./bin/run"
