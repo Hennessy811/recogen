@@ -1,50 +1,54 @@
-genrc
-=====
+# recogen
 
 Generate React components by templates nice and easy
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/genrc.svg)](https://npmjs.org/package/genrc)
-[![CircleCI](https://circleci.com/gh/Hennessy811/genrc/tree/master.svg?style=shield)](https://circleci.com/gh/Hennessy811/genrc/tree/master)
-[![Downloads/week](https://img.shields.io/npm/dw/genrc.svg)](https://npmjs.org/package/genrc)
-[![License](https://img.shields.io/npm/l/genrc.svg)](https://github.com/Hennessy811/genrc/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/recogen.svg)](https://npmjs.org/package/recogen)
+[![CircleCI](https://circleci.com/gh/Hennessy811/recogen/tree/master.svg?style=shield)](https://circleci.com/gh/Hennessy811/recogen/tree/master)
+[![Downloads/week](https://img.shields.io/npm/dw/recogen.svg)](https://npmjs.org/package/recogen)
+[![License](https://img.shields.io/npm/l/recogen.svg)](https://github.com/Hennessy811/recogen/blob/master/package.json)
 
 <!-- toc -->
+* [recogen](#recogen)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
 ```sh-session
-$ npm install -g genrc
-$ genrc COMMAND
+$ npm install -g recogen
+$ recogen COMMAND
 running command...
-$ genrc (-v|--version|version)
-genrc/0.1.1 darwin-x64 node-v12.18.4
-$ genrc --help [COMMAND]
+$ recogen (-v|--version|version)
+recogen/0.1.1 darwin-x64 node-v12.18.4
+$ recogen --help [COMMAND]
 USAGE
-  $ genrc COMMAND
+  $ recogen COMMAND
 ...
 ```
 <!-- usagestop -->
-# Commands
-<!-- commands -->
-* [`genrc g`](#genrc-g)
-* [`genrc help [COMMAND]`](#genrc-help-command)
 
-## `genrc g`
+# Commands
+
+<!-- commands -->
+* [`recogen g`](#recogen-g)
+* [`recogen help [COMMAND]`](#recogen-help-command)
+
+## `recogen g`
 
 Generate React components
 
 ```
 USAGE
-  $ genrc g
+  $ recogen g
 
 OPTIONS
   -h, --help  show CLI help
 
 EXAMPLE
-  $ genrc g
+  $ recogen g
        Enter component name?: MyComponent
        ? Select styling module: (Use arrow keys)
        > .less
@@ -55,15 +59,15 @@ EXAMPLE
        Generating...... done
 ```
 
-_See code: [src/commands/g.ts](https://github.com/Hennessy811/genrc/blob/v0.1.1/src/commands/g.ts)_
+_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.1.1/src/commands/g.ts)_
 
-## `genrc help [COMMAND]`
+## `recogen help [COMMAND]`
 
-display help for genrc
+display help for recogen
 
 ```
 USAGE
-  $ genrc help [COMMAND]
+  $ recogen help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for

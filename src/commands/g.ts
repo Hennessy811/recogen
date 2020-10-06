@@ -42,7 +42,7 @@ export default class Generate extends Command {
 	static description = 'Generate React components';
 
 	static examples = [
-		`$ genrc g
+		`$ recogen g
     Enter component name?: MyComponent
     ? Select styling module: (Use arrow keys)
     > .less

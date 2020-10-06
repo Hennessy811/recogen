@@ -1,18 +1,19 @@
 {
-	"name": "genrc",
+	"name": "recogen",
 	"description": "Generate React components by templates nice and easy",
 	"version": "0.1.1",
 	"author": "Malakhov Dmitriy",
 	"bin": {
-		"genrc": "./bin/run"
+		"recogen": "./bin/run"
 	},
-	"bugs": "https://github.com/Hennessy811/genrc/issues",
+	"bugs": "https://github.com/Hennessy811/recogen/issues",
 	"dependencies": {
 		"@oclif/command": "^1",
 		"@oclif/config": "^1",
 		"@oclif/plugin-help": "^3",
 		"@types/fs-extra": "^9.0.1",
 		"@types/inquirer": "^7.3.1",
+		"cli-ux": "^5.5.0",
 		"fs-extra": "^9.0.1",
 		"inquirer": "^7.3.3",
 		"tslib": "^1"
@@ -47,7 +48,7 @@
 		"/npm-shrinkwrap.json",
 		"/oclif.manifest.json"
 	],
-	"homepage": "https://github.com/Hennessy811/genrc",
+	"homepage": "https://github.com/Hennessy811/recogen",
 	"keywords": [
 		"oclif"
 	],
@@ -55,12 +56,12 @@
 	"main": "lib/index.js",
 	"oclif": {
 		"commands": "./lib/commands",
-		"bin": "genrc",
+		"bin": "recogen",
 		"plugins": [
 			"@oclif/plugin-help"
 		]
 	},
-	"repository": "Hennessy811/genrc",
+	"repository": "Hennessy811/recogen",
 	"scripts": {
 		"postpack": "rm -f oclif.manifest.json",
 		"posttest": "eslint . --ext .ts --config .eslintrc",
