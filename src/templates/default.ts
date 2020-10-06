@@ -1,12 +1,19 @@
+import { StylesType } from '../commands/g';
+
 interface ComponentProps {
 	name: string;
-	withStyles?: boolean;
+	style?: StylesType;
 }
 
-export const component = ({ name, withStyles = true }: ComponentProps) => {
+export const component = ({ name, style }: ComponentProps): string => {
+	const stylesStr =
+		style === 'no styles'
+			? ''
+			: `import styles from './${name}.module${style}';`;
+
 	return `
 import React from 'react';
-${withStyles ? `import styles from './${name}.module.scss';` : ''}
+${stylesStr}
 
 const ${name} = () => {
   return (

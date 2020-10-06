@@ -4,13 +4,15 @@ import * as inquirer from 'inquirer';
 import * as fs from 'fs-extra';
 import * as defaultTemplates from '../templates/default';
 
+export type StylesType = '.scss' | '.sass' | '.less' | '.css' | 'no styles';
+
 const writeTemplates = ({
 	name,
 	style,
 	useTS
 }: {
 	name: string;
-	style: '.scss' | '.sass' | '.less' | '.css' | 'no styles';
+	style: StylesType;
 	useTS: boolean;
 }) => {
 	const extension = useTS ? 'ts' : 'js';
