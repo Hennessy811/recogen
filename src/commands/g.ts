@@ -34,8 +34,25 @@ const writeTemplates = ({
 	}
 };
 
+function capitalizeFirstLetter(string: string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 export default class Generate extends Command {
 	static description = 'Generate React components';
+
+	static examples = [
+		`$ genrc g
+    Enter component name?: MyComponent
+    ? Select styling module: (Use arrow keys)
+    > .less
+      .scss
+      .css
+      no styles
+    Use TypeScript? (Y/n)
+    Generating...... done
+`
+	];
 
 	static flags = {
 		help: flags.help({ char: 'h' })
@@ -48,7 +65,15 @@ export default class Generate extends Command {
 	async run() {
 		const { args, flags } = this.parse(Generate);
 
-		const name = await cli.prompt('Enter component name?');
+		let name: string = await cli.prompt('Enter component name?');
+
+		name = name.trim();
+
+		if (name.split(' ').length !== 1 || capitalizeFirstLetter(name) !== name) {
+			this.error('Component name should be one-worded and upper-cased');
+			return 0;
+		}
+
 		const responses = await inquirer.prompt([
 			{
 				name: 'styles',
@@ -76,6 +101,8 @@ export default class Generate extends Command {
 			useTS: responses['useTS']
 		});
 		cli.action.stop();
-		this.log(`Name - ${name} | ${JSON.stringify(responses)}`);
+		this.log(`
+    '${name}' component generated. Styles - '${responses['styles']}' | Use TS: ${responses['useTS']}
+    `);
 	}
 }
