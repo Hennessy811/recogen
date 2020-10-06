@@ -1,7 +1,7 @@
 {
 	"name": "genrc",
 	"description": "Generate React components by templates nice and easy",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": "Malakhov Dmitriy",
 	"bin": {
 		"genrc": "./bin/run"

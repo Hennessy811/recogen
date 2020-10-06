@@ -20,7 +20,7 @@ $ npm install -g genrc
 $ genrc COMMAND
 running command...
 $ genrc (-v|--version|version)
-genrc/0.1.0 darwin-x64 node-v12.18.4
+genrc/0.1.1 darwin-x64 node-v12.18.4
 $ genrc --help [COMMAND]
 USAGE
   $ genrc COMMAND
@@ -30,7 +30,6 @@ USAGE
 # Commands
 <!-- commands -->
 * [`genrc g`](#genrc-g)
-* [`genrc hello [FILE]`](#genrc-hello-file)
 * [`genrc help [COMMAND]`](#genrc-help-command)
 
 ## `genrc g`
@@ -43,29 +42,20 @@ USAGE
 
 OPTIONS
   -h, --help  show CLI help
-```
-
-_See code: [src/commands/g.ts](https://github.com/Hennessy811/genrc/blob/v0.1.0/src/commands/g.ts)_
-
-## `genrc hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ genrc hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
 
 EXAMPLE
-  $ genrc hello
-  hello world from ./src/hello.ts!
+  $ genrc g
+       Enter component name?: MyComponent
+       ? Select styling module: (Use arrow keys)
+       > .less
+         .scss
+         .css
+         no styles
+       Use TypeScript? (Y/n)
+       Generating...... done
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/Hennessy811/genrc/blob/v0.1.0/src/commands/hello.ts)_
+_See code: [src/commands/g.ts](https://github.com/Hennessy811/genrc/blob/v0.1.1/src/commands/g.ts)_
 
 ## `genrc help [COMMAND]`
 
