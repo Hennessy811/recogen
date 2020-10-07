@@ -24,11 +24,15 @@ Config file created successfully at ../.././.recogenrc
 		} else {
 			fs.writeFileSync(
 				`${rootDir}/.recogenrc`,
-				JSON.stringify({
-					styles: '.less',
-					useTS: false,
-					useModules: false
-				})
+				JSON.stringify(
+					{
+						styles: '.less',
+						useTS: false,
+						useModules: false
+					},
+					null,
+					2
+				)
 			);
 			this.log(`Config file created successfully at ${rootDir}.recogenrc`);
 		}

@@ -71,7 +71,13 @@ export default class Generate extends Command {
 	];
 
 	static flags = {
-		help: flags.help({ char: 'h' })
+		help: flags.help({ char: 'h' }),
+		ignoreConfig: flags.boolean({
+			char: 'i',
+			default: false,
+			description:
+				'Allow you to create component without looking for project-level config'
+		})
 		// flag with a value (-n, --name=VALUE)
 		// name: flags.string({ char: 'n', description: 'name to print' }),
 	};
@@ -101,9 +107,15 @@ Use TS: ${useTS}`
 	};
 
 	async run() {
-		// const { args, flags } = this.parse(Generate);
+		const { args, flags } = this.parse(Generate);
+
 		const [config] = getConfig();
-		console.log('Using config', config);
+		if (flags.ignoreConfig) this.log('Ignoring project-level config');
+		// eslint-disable-next-line no-negated-condition
+		else if (!config) {
+			this.log('There are no config in this project');
+			this.log('You can create default with "recogen config"');
+		} else console.log('Using config', config);
 
 		let name: string = await cli.prompt('Enter component name?');
 
@@ -114,7 +126,7 @@ Use TS: ${useTS}`
 			return 0;
 		}
 
-		if (config) {
+		if (config && !flags.ignoreConfig) {
 			this.createFiles({ name, ...config });
 			return 0;
 		}
