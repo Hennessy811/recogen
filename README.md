@@ -23,7 +23,7 @@ $ npm install -g recogen
 $ recogen COMMAND
 running command...
 $ recogen (-v|--version|version)
-recogen/0.1.6 darwin-x64 node-v12.18.4
+recogen/0.1.7 darwin-x64 node-v12.18.4
 $ recogen --help [COMMAND]
 USAGE
   $ recogen COMMAND
@@ -64,7 +64,7 @@ EXAMPLE
   Config file created successfully at ../.././.recogenrc
 ```
 
-_See code: [src/commands/config.ts](https://github.com/Hennessy811/recogen/blob/v0.1.6/src/commands/config.ts)_
+_See code: [src/commands/config.ts](https://github.com/Hennessy811/recogen/blob/v0.1.7/src/commands/config.ts)_
 
 ## `recogen g`
 
@@ -75,7 +75,8 @@ USAGE
   $ recogen g
 
 OPTIONS
-  -h, --help  show CLI help
+  -h, --help          show CLI help
+  -i, --ignoreConfig  Allow you to create component without looking for project-level config
 
 EXAMPLE
   $ recogen g
@@ -89,7 +90,7 @@ EXAMPLE
        Generating...... done
 ```
 
-_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.1.6/src/commands/g.ts)_
+_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.1.7/src/commands/g.ts)_
 
 ## `recogen help [COMMAND]`
 
