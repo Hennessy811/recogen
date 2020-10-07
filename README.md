@@ -9,28 +9,26 @@ Generate React components by templates nice and easy
 [![License](https://img.shields.io/npm/l/recogen.svg)](https://github.com/Hennessy811/recogen/blob/master/package.json)
 
 <!-- toc -->
-
-- [recogen](#recogen)
-- [Usage](#usage)
-- [Commands](#commands)
+* [recogen](#recogen)
+* [Usage](#usage)
+* [Commands](#commands)
+* [Contact me for any help:](#contact-me-for-any-help)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g recogen
 $ recogen COMMAND
 running command...
 $ recogen (-v|--version|version)
-recogen/0.1.4 darwin-x64 node-v12.18.4
+recogen/0.1.6 darwin-x64 node-v12.18.4
 $ recogen --help [COMMAND]
 USAGE
   $ recogen COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 ### Config `.recogenrc` should look like:
@@ -46,10 +44,9 @@ USAGE
 # Commands
 
 <!-- commands -->
-
-- [`recogen config`](#recogen-config)
-- [`recogen g`](#recogen-g)
-- [`recogen help [COMMAND]`](#recogen-help-command)
+* [`recogen config`](#recogen-config)
+* [`recogen g`](#recogen-g)
+* [`recogen help [COMMAND]`](#recogen-help-command)
 
 ## `recogen config`
 
@@ -67,7 +64,7 @@ EXAMPLE
   Config file created successfully at ../.././.recogenrc
 ```
 
-_See code: [src/commands/config.ts](https://github.com/Hennessy811/recogen/blob/v0.1.4/src/commands/config.ts)_
+_See code: [src/commands/config.ts](https://github.com/Hennessy811/recogen/blob/v0.1.6/src/commands/config.ts)_
 
 ## `recogen g`
 
@@ -92,7 +89,7 @@ EXAMPLE
        Generating...... done
 ```
 
-_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.1.4/src/commands/g.ts)_
+_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.1.6/src/commands/g.ts)_
 
 ## `recogen help [COMMAND]`
 
@@ -110,7 +107,6 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
-
 <!-- commandsstop -->
 
 # Contact me for any help:
