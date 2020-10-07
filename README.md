@@ -9,14 +9,16 @@ Generate React components by templates nice and easy
 [![License](https://img.shields.io/npm/l/recogen.svg)](https://github.com/Hennessy811/recogen/blob/master/package.json)
 
 <!-- toc -->
-* [recogen](#recogen)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [recogen](#recogen)
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g recogen
 $ recogen COMMAND
@@ -28,18 +30,30 @@ USAGE
   $ recogen COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`recogen config`](#recogen-config)
-* [`recogen g`](#recogen-g)
-* [`recogen help [COMMAND]`](#recogen-help-command)
+
+- [`recogen config`](#recogen-config)
+- [`recogen g`](#recogen-g)
+- [`recogen help [COMMAND]`](#recogen-help-command)
+
+### Config `.recogenrc` should look like:
+
+```
+{
+  "styles": ".less", // | ".sass" | ".css" | "no styles"
+  "useTS": true, // use TypeScript
+  "useModules": true // use CSS Modules feature
+}
+```
 
 ## `recogen config`
 
-Create config file in project directory
+Create config file in project directory at package.json level
 
 ```
 USAGE
@@ -96,4 +110,10 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
+
 <!-- commandsstop -->
+
+# Contact me for any help:
+
+- telegram: @Hennessy811
+- email: mitia2022@gmail.com

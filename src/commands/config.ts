@@ -3,7 +3,8 @@ import * as fs from 'fs-extra';
 import { getConfig } from '../utils/get-config';
 
 export default class Generate extends Command {
-	static description = 'Create config file in project directory';
+	static description =
+		'Create config file in project directory at package.json level';
 
 	static examples = [
 		`$ recogen config
