@@ -3,8 +3,16 @@ import cli from 'cli-ux';
 import * as inquirer from 'inquirer';
 import * as fs from 'fs-extra';
 import * as defaultTemplates from '../templates/default';
+import { getConfig } from '../utils/get-config';
 
 export type StylesType = '.scss' | '.sass' | '.less' | '.css' | 'no styles';
+
+export interface Config {
+	styles: StylesType;
+	name?: string;
+	useModules: boolean;
+	useTS: boolean;
+}
 
 const writeTemplates = ({
 	name,
@@ -70,8 +78,32 @@ export default class Generate extends Command {
 
 	// static args = [{ name: 'file' }];
 
+	createFiles = ({
+		name,
+		styles,
+		useTS,
+		useModules
+	}: Required<Config>): void => {
+		cli.action.start('Generating...');
+		writeTemplates({
+			name,
+			style: styles,
+			useTS: useTS,
+			useModules: useModules
+		});
+		cli.action.stop();
+		this.log(
+			`'${name}' component generated.
+Styles - '${styles}
+Use modules - ${useModules}
+Use TS: ${useTS}`
+		);
+	};
+
 	async run() {
 		// const { args, flags } = this.parse(Generate);
+		const [config] = getConfig();
+		console.log('Using config', config);
 
 		let name: string = await cli.prompt('Enter component name?');
 
@@ -79,6 +111,11 @@ export default class Generate extends Command {
 
 		if (name.split(' ').length !== 1 || capitalizeFirstLetter(name) !== name) {
 			this.error('Component name should be one-worded and upper-cased');
+			return 0;
+		}
+
+		if (config) {
+			this.createFiles({ name, ...config });
 			return 0;
 		}
 
@@ -108,17 +145,7 @@ export default class Generate extends Command {
 			}
 		]);
 
-		cli.action.start('Generating...');
-		writeTemplates({
-			name,
-			style: responses.styles,
-			useTS: responses.useTS,
-			useModules: responses.useModules
-		});
-		cli.action.stop();
-		this.log(`
-    '${name}' component generated. Styles - '${responses.styles} | Use modules - ${responses.useModules} | Use TS: ${responses.useTS}
-    `);
+		this.createFiles({ name, ...responses });
 
 		return 0;
 	}
