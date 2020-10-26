@@ -23,7 +23,7 @@ $ npm install -g recogen
 $ recogen COMMAND
 running command...
 $ recogen (-v|--version|version)
-recogen/0.1.7 darwin-x64 node-v12.18.4
+recogen/0.2.0 darwin-x64 node-v14.13.1
 $ recogen --help [COMMAND]
 USAGE
   $ recogen COMMAND
@@ -44,9 +44,37 @@ USAGE
 # Commands
 
 <!-- commands -->
+* [`recogen codemod`](#recogen-codemod)
 * [`recogen config`](#recogen-config)
 * [`recogen g`](#recogen-g)
 * [`recogen help [COMMAND]`](#recogen-help-command)
+
+## `recogen codemod`
+
+Allow you to modify existing components to fit project-level config
+
+```
+USAGE
+  $ recogen codemod
+
+OPTIONS
+  -d, --dir=dir    Path to target directory
+  -f, --file=file  Path to target file
+  -h, --help       show CLI help
+
+EXAMPLES
+  $ recogen codemod ./Card
+       /** ./Card contents
+        *    - index.(jsx|tsx|js|ts)
+        *    - styles.(less|css|sass)
+        */
+  Generating...... done
+
+  $ recogen codemod ./Card.jsx
+  Generating...... done
+```
+
+_See code: [src/commands/codemod.ts](https://github.com/Hennessy811/recogen/blob/v0.2.0/src/commands/codemod.ts)_
 
 ## `recogen config`
 
@@ -64,7 +92,7 @@ EXAMPLE
   Config file created successfully at ../.././.recogenrc
 ```
 
-_See code: [src/commands/config.ts](https://github.com/Hennessy811/recogen/blob/v0.1.7/src/commands/config.ts)_
+_See code: [src/commands/config.ts](https://github.com/Hennessy811/recogen/blob/v0.2.0/src/commands/config.ts)_
 
 ## `recogen g`
 
@@ -90,7 +118,7 @@ EXAMPLE
        Generating...... done
 ```
 
-_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.1.7/src/commands/g.ts)_
+_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.2.0/src/commands/g.ts)_
 
 ## `recogen help [COMMAND]`
 
