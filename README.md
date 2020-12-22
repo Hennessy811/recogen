@@ -23,7 +23,7 @@ $ npm install -g recogen
 $ recogen COMMAND
 running command...
 $ recogen (-v|--version|version)
-recogen/0.2.0 darwin-x64 node-v14.13.1
+recogen/0.3.0 darwin-x64 node-v14.13.1
 $ recogen --help [COMMAND]
 USAGE
   $ recogen COMMAND
@@ -74,7 +74,7 @@ EXAMPLES
   Generating...... done
 ```
 
-_See code: [src/commands/codemod.ts](https://github.com/Hennessy811/recogen/blob/v0.2.0/src/commands/codemod.ts)_
+_See code: [src/commands/codemod.ts](https://github.com/Hennessy811/recogen/blob/v0.3.0/src/commands/codemod.ts)_
 
 ## `recogen config`
 
@@ -92,7 +92,7 @@ EXAMPLE
   Config file created successfully at ../.././.recogenrc
 ```
 
-_See code: [src/commands/config.ts](https://github.com/Hennessy811/recogen/blob/v0.2.0/src/commands/config.ts)_
+_See code: [src/commands/config.ts](https://github.com/Hennessy811/recogen/blob/v0.3.0/src/commands/config.ts)_
 
 ## `recogen g`
 
@@ -118,7 +118,7 @@ EXAMPLE
        Generating...... done
 ```
 
-_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.2.0/src/commands/g.ts)_
+_See code: [src/commands/g.ts](https://github.com/Hennessy811/recogen/blob/v0.3.0/src/commands/g.ts)_
 
 ## `recogen help [COMMAND]`
 
