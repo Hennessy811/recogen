@@ -26,8 +26,8 @@ Config file created successfully at ../.././.recogenrc
 				`${rootDir}/.recogenrc`,
 				JSON.stringify(
 					{
-						styles: '.less',
-						useTS: false,
+						styles: '.scss',
+						useTS: true,
 						useModules: false
 					},
 					null,

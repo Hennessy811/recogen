@@ -38,7 +38,7 @@ const writeTemplates = ({
 		defaultTemplates.index({ name })
 	);
 
-	if (style !== 'no styles') {
+	if (style && style !== 'no styles') {
 		if (useModules) {
 			fs.writeFileSync(
 				`./${name}/${name}.module${style}`,
@@ -123,7 +123,6 @@ Use TS: ${useTS}`
 
 		if (name.split(' ').length !== 1 || capitalizeFirstLetter(name) !== name) {
 			this.error('Component name should be one-worded and upper-cased');
-			return 0;
 		}
 
 		if (config && !flags.ignoreConfig) {
