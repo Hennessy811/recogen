@@ -1,10 +1,7 @@
 import { Command, flags } from '@oclif/command';
-import cli from 'cli-ux';
-import * as inquirer from 'inquirer';
 import * as fs from 'fs-extra';
 import * as defaultTemplates from '../templates/default';
 import { getConfig } from '../utils/get-config';
-import kek from '../../components/Kek';
 import { Config } from './g';
 
 export default class Generate extends Command {
@@ -58,7 +55,7 @@ Generating...... done
 		);
 	}
 
-	modFile(flags, config) {
+	modFile(flags: any, config: Config) {
 		const relPath = flags.file
 			.split('/')
 			.slice(0, flags.file.split('/').length - 1)

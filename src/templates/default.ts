@@ -13,7 +13,7 @@ export const component = ({
 }: ComponentProps): string => {
 	let styles = '';
 	if (useModules) styles = `import styles from './${name}.module${style}';`;
-	else styles = `import './styles${style}';`;
+	else if (style !== 'no styles') styles = `import './styles${style}';`;
 
 	return `
 import React from 'react';
