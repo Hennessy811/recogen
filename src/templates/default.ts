@@ -14,8 +14,7 @@ export const component = ({
 	let styles = '';
 	if (style !== 'no styles' && style !== null && useModules)
 		styles = `import styles from './${name}.module${style}';`;
-
-	if (styles && style !== 'no styles') {
+	if (style && style !== 'no styles') {
 		styles = `import './styles${style}';`;
 	}
 
